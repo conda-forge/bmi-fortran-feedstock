@@ -1,7 +1,7 @@
 mkdir _build
 cd _build
 
-cmake -G "Visual Studio 14 2015 Win64" ^
+cmake -G "NMake Makefiles" ^
   -DCMAKE_INSTALL_PREFIX:PATH=%LIBRARY_PREFIX% ^
   -DCMAKE_BUILD_TYPE=Release ^
   %SRC_DIR%
