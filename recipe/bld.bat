@@ -1,13 +1,11 @@
-mkdir _build
-cd _build
+mkdir build && cd build
 
-cmake -G "NMake Makefiles" ^
+cmake -LAH -G "NMake Makefiles" ^
   -DCMAKE_INSTALL_PREFIX:PATH=%LIBRARY_PREFIX% ^
   -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
   -DCMAKE_BUILD_TYPE=Release ^
   %SRC_DIR%
-
 if errorlevel 1 exit 1
 
-cmake --build .
+cmake --build . --target install --config Release
 if errorlevel 1 exit 1
