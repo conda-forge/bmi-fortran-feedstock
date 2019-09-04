@@ -1,5 +1,8 @@
 {% set name = "bmi-fortran" %}
 {% set version = "1.2.1" %}
+{% set version_numbers = version.split('.') %}
+{% set major = version_numbers[0] %}
+{% set minor = version_numbers[1] %}
 
 package:
   name: {{ name|lower }}
@@ -21,7 +24,7 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/include/bmif_{{ version|replace(".","_") }}.mod
+    - test -f $PREFIX/include/bmif_{{ major }}_{{ minor }}.mod
     - test -h $PREFIX/lib/libbmif$SHLIB_EXT
 
 about:
