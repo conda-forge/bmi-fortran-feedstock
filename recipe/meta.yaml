@@ -26,6 +26,7 @@ test:
   commands:
     - test -f $PREFIX/include/bmif_{{ major }}_{{ minor }}.mod
     - test -h $PREFIX/lib/libbmif$SHLIB_EXT
+    - test -s $PREFIX/lib/libbmif.a
 
 about:
   home: https://bmi.readthedocs.io
