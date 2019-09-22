@@ -19,7 +19,8 @@ requirements:
   build:
     - cmake
     - {{ compiler('fortran') }}
-    - make
+    - {{ compiler('cxx') }}      # [win]
+    - make                       # [unix]
 
 test:
   commands:
