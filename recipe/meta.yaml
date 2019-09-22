@@ -24,9 +24,12 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/include/bmif_{{ major }}_{{ minor }}.mod
-    - test -h $PREFIX/lib/libbmif$SHLIB_EXT
-    - test -s $PREFIX/lib/libbmif.a
+    - test -f $PREFIX/include/bmif_{{ major }}_{{ minor }}.mod # [unix]
+    - test -h $PREFIX/lib/libbmif$SHLIB_EXT                    # [unix]
+    - test -s $PREFIX/lib/libbmif.a                            # [unix]
+    - if not exist %LIBRARY_INC%\\bmif_{{ major }}_{{ minor }}.mod exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\bmif.lib exit 1              # [win]
+    - if not exist %LIBRARY_BIN%\\bmif_win.dll exit 1          # [win]
 
 about:
   home: https://bmi.readthedocs.io
