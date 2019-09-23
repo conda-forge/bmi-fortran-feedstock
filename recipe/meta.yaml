@@ -1,8 +1,7 @@
 {% set name = "bmi-fortran" %}
 {% set version = "1.2.1" %}
-{% set version_numbers = version.split('.') %}
-{% set major = version_numbers[0] %}
-{% set minor = version_numbers[1] %}
+{% set major = version.split('.')[0] %}
+{% set minor = version.split('.')[1] %}
 
 package:
   name: {{ name|lower }}
@@ -13,20 +12,24 @@ source:
   sha256: a03f3acaf9f29892a5b4c8cedb9860fb3852a5b36fdc16abf1c9c9ef1f533346
 
 build:
-  number: 0
-  skip: True  # [win]
+  number: 1
+  skip: true  # [win and vc<14]
 
 requirements:
   build:
     - cmake
     - {{ compiler('fortran') }}
-    - make
+    - {{ compiler('cxx') }}  # [win]
+    - make  # [unix]
 
 test:
   commands:
-    - test -f $PREFIX/include/bmif_{{ major }}_{{ minor }}.mod
-    - test -h $PREFIX/lib/libbmif$SHLIB_EXT
-    - test -s $PREFIX/lib/libbmif.a
+    - test -f $PREFIX/include/bmif_{{ major }}_{{ minor }}.mod   # [unix]
+    - test -h $PREFIX/lib/libbmif$SHLIB_EXT                      # [unix]
+    - test -s $PREFIX/lib/libbmif.a                              # [unix]
+    - if not exist %LIBRARY_INC%\\bmif_{{ major }}_{{ minor }}.mod exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\bmif.lib exit 1                # [win]
+    - if not exist %LIBRARY_BIN%\\bmif_win.dll exit 1            # [win]
 
 about:
   home: https://bmi.readthedocs.io
