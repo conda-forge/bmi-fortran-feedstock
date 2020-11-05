@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/csdms/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: f22686dde4841977a8166a98de39d0357ded59824df1a6d2e0d38a98173b14d1
+  sha256: a03f3acaf9f29892a5b4c8cedb9860fb3852a5b36fdc16abf1c9c9ef1f533346
 
 build:
   number: 2
