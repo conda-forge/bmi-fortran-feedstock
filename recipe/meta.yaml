@@ -1,5 +1,5 @@
 {% set name = "bmi-fortran" %}
-{% set version = "2.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/csdms/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: f22686dde4841977a8166a98de39d0357ded59824df1a6d2e0d38a98173b14d1
+  sha256: 950c0e898a9410da59ce71c949c3926fe2d898eac473339fcf4bcc2e49203b5b
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
