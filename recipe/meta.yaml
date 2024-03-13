@@ -25,9 +25,11 @@ test:
     - test -f $PREFIX/include/bmif_2_0.mod             # [unix]
     - test -h $PREFIX/lib/libbmif$SHLIB_EXT            # [unix]
     - test -s $PREFIX/lib/libbmif.a                    # [unix]
+    - test -f $PREFIX/lib/pkgconfig/bmif.pc            # [unix]
     - if not exist %LIBRARY_INC%\\bmif_2_0.mod exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\bmif.lib exit 1      # [win]
     - if not exist %LIBRARY_BIN%\\bmif_win.dll exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\pkgconfig\\bmif.pc exit 1  # [win]
 
 about:
   home: https://bmi.readthedocs.io
