@@ -15,9 +15,10 @@ build:
 
 requirements:
   build:
-    - cmake
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}  # [win]
+    - {{ stdlib("c") }}
+    - cmake
     - make  # [unix]
 
 test:
