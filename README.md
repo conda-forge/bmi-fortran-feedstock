@@ -15,7 +15,7 @@ Documentation: https://bmi.readthedocs.io
 
 Bindings, developed with Fortran 2003, for the CSDMS Basic Model
 Interface (BMI). This package defines a module that includes an
-interface intended to be overriden by a model developer when they
+interface intended to be overridden by a model developer when they
 add a BMI to their model.
 
 
