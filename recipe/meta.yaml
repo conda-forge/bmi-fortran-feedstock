@@ -20,6 +20,7 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - make  # [unix]
+    - pkg-config
 
 test:
   commands:
