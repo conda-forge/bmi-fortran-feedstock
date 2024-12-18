@@ -1,5 +1,5 @@
 {% set name = "bmi-fortran" %}
-{% set version = "2.0.2" %}
+{% set version = "2.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/csdms/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: ee08bd5b37404cca2feab9b25db3508d244d8b97ec3c7962aab025306167259a
+  sha256: 005cc059da1f9efb19ea8ff1cdb54daeb3acdcbd01f8c76f26b0fa22bd130bc6
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
@@ -27,10 +27,10 @@ test:
     - test -h $PREFIX/lib/libbmif$SHLIB_EXT            # [unix]
     - test -s $PREFIX/lib/libbmif.a                    # [unix]
     - test -f $PREFIX/lib/pkgconfig/bmif.pc            # [unix]
-    - if not exist %LIBRARY_INC%\\bmif_2_0.mod exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\bmif.lib exit 1      # [win]
-    - if not exist %LIBRARY_BIN%\\bmif_win.dll exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\pkgconfig\\bmif.pc exit 1  # [win]
+    - if not exist %PREFIX%\Library\include\bmif_2_0.mod exit 1   # [win]
+    - if not exist %PREFIX%\Library\lib\bmif_static.lib exit 1    # [win]
+    - if not exist %PREFIX%\Library\bin\bmif.dll exit 1           # [win]
+    - if not exist %PREFIX%\Library\lib\pkgconfig\bmif.pc exit 1  # [win]
 
 about:
   home: https://bmi.readthedocs.io
