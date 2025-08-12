@@ -3,17 +3,17 @@ About bmi-fortran-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bmi-fortran-feedstock/blob/main/LICENSE.txt)
 
-Home: https://bmi.readthedocs.io
+Home: https://csdms.colorado.edu/wiki/BMI
 
 Package license: MIT
 
-Summary: Fortran specification for the Basic Model Interface
+Summary: Fortran mappings for the Basic Model Interface
 
 Development: https://github.com/csdms/bmi-fortran
 
 Documentation: https://bmi.readthedocs.io
 
-Bindings, developed with Fortran 2003, for the CSDMS Basic Model
+Mappings, developed with Fortran 2003, for the CSDMS Basic Model
 Interface (BMI). This package defines a module that includes an
 interface intended to be overridden by a model developer when they
 add a BMI to their model.
@@ -41,6 +41,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6712&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/bmi-fortran-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6712&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/bmi-fortran-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
