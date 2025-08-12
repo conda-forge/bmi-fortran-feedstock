@@ -33,13 +33,13 @@ test:
     - if not exist %PREFIX%\Library\lib\pkgconfig\bmif.pc exit 1  # [win]
 
 about:
-  home: https://bmi.readthedocs.io
+  home: https://csdms.colorado.edu/wiki/BMI
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Fortran specification for the Basic Model Interface'
+  summary: 'Fortran mappings for the Basic Model Interface'
   description: |
-    Bindings, developed with Fortran 2003, for the CSDMS Basic Model
+    Mappings, developed with Fortran 2003, for the CSDMS Basic Model
     Interface (BMI). This package defines a module that includes an
     interface intended to be overridden by a model developer when they
     add a BMI to their model.
